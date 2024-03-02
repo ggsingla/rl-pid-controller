@@ -1,0 +1,28 @@
+# Ignore virtual environment
+.venv/
+
+# Ignore Poetry lock file
+poetry.lock
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore cache directories
+__pycache__/
+.cache/
+
+# Ignore development environment files
+.env
+.env.*
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore logs
+*.log
+
+# Ignore any other project-specific files or directories
