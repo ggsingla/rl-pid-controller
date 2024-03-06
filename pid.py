@@ -14,7 +14,7 @@ class PIDEnv(gym.Env):
         self.Phi = 0.01
         self.Ia = 0.5
 
-        self.target = 1.0
+        self.target = 2.0
 
         self.dt = dt
 
@@ -29,13 +29,13 @@ class PIDEnv(gym.Env):
         self.Kp, self.Ki, self.Kd = 1.0, 0.01, 0.01  # Initial PID parameters
         self.integral = 0
         self.prev_error = 0
-        self.states = []
-        self.targets = []
-        self.errors = []
-        self.rewards = []
-        self.Kps = []
-        self.Kis = []
-        self.Kds = []
+        # self.states = []
+        # self.targets = []
+        # self.errors = []
+        # self.rewards = []
+        # self.Kps = []
+        # self.Kis = []
+        # self.Kds = []
 
     def normalize_reward(self, reward, min_reward= -10, max_reward=10):
         clipped_reward = max(min(reward, max_reward), min_reward)
@@ -93,6 +93,7 @@ class PIDEnv(gym.Env):
         derivative = (error - self.prev_error) / (self.dt + 1e-5)
         output = self.Kp*error + self.Ki*self.integral + self.Kd*derivative
         self.prev_error = error
+        
 
         V = output
 
@@ -111,7 +112,9 @@ class PIDEnv(gym.Env):
         # if done:
         #     self.plotter(self.state, self.target, error, reward, action)
         # self.plotter(self.state, self.target, error, reward, action, done)
-        print("Action:", np.trunc(action*100)/100)
+        # print("Action:", np.trunc(action*100)/100)
+
+        print("error", error)
 
         if done: 
             print("Done reached")
@@ -119,7 +122,7 @@ class PIDEnv(gym.Env):
             print("Target:", self.target)
             print("Error:", error)
             print("Reward:", reward)
-            # print("Action:", action)
+            print("Action:", action)
 
 
         info = {}
