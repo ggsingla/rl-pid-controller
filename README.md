@@ -86,3 +86,12 @@ After training, evaluate the performance of the tuned PID controller to ensure i
 - **Content**:
   - Successful PID control of a DC motor's angular velocity via RL.
   - Future work to explore complex control scenarios and optimization techniques.
+
+### how to setup the project
+
+- Clone the repository
+- Install poetry
+- Run `pip install poetry`
+- Run `poetry install` to install the dependencies
+- Run `poetry shell` to activate the virtual environment
+- Run `python base.py` to run the project
