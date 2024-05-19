@@ -26,7 +26,7 @@ class PIDEnv(gym.Env):
 
         self.seed()
         self.state = None
-        self.Kp, self.Ki, self.Kd = 1.0, 0.01, 0.01  # Initial PID parameters
+        self.Kp, self.Ki, self.Kd = 2, 1.0, 0.5  # Initial PID parameters
         self.integral = 0
         self.prev_error = 0
         # self.states = []
