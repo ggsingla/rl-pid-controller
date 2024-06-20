@@ -18,7 +18,7 @@ class PIDEnv(gym.Env):
 
         self.dt = dt
 
-        self.action_space = spaces.Box(low=np.array([-10, -10, -10], dtype=np.float32), high=np.array([10, 10, 10], dtype=np.float32))
+        self.action_space = spaces.Box(low=np.array([0, 0, 0], dtype=np.float32), high=np.array([10, 10, 10], dtype=np.float32))
 
         # self.observation_space = spaces.Box(low=np.array([0.0, 0.0]), high=np.array([2.0, 2.0]), dtype=np.float32)
         self.observation_space = spaces.Box(low=np.array([-1, -1]), high=np.array([1, 1]), dtype=np.float32)
